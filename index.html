@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan de Acción Climática Local — Pabellón de Arteaga 2026-2030</title>
+<meta name="description" content="Plan de Acción Climática Local e Inventario de Emisiones de GEI del municipio de Pabellón de Arteaga, Aguascalientes. IMBIO 2026-2030.">
+<style>
+  :root{
+    --azul:#003B7A; --azul-osc:#002A5C; --azul-med:#0057B8; --azul-claro:#E8F1FB; --azul-borde:#B3CFF0;
+    --verde:#166534; --verde-claro:#f0fdf4; --verde-borde:#bbf7d0;
+    --ambar:#b45309; --ambar-claro:#fffbeb; --ambar-borde:#fde68a;
+    --rojo:#991b1b; --rojo-claro:#fef2f2;
+    --texto:#1a202c; --muted:#4b5563; --borde:#dbe3ee; --fondo:#f4f7fb; --blanco:#fff;
+    --s1:#0057B8; --s2:#d97706; --s3:#166534; --s4:#7c3aed; --s5:#dc2626;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--texto);background:var(--fondo);line-height:1.55}
+  h1,h2,h3,h4{font-family:inherit;margin:0 0 .5em}
+  a{color:var(--azul-med)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  /* HEADER */
+  header.hero{background:linear-gradient(135deg,var(--azul-osc),var(--azul) 60%,var(--verde));color:#fff;padding:54px 0 46px}
+  header.hero .eyebrow{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;opacity:.85;font-weight:700}
+  header.hero h1{font-size:2.1rem;font-weight:800;margin-top:6px;line-height:1.25}
+  header.hero p.lead{font-size:1.05rem;opacity:.92;max-width:760px;margin-top:10px}
+  .badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+  .badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:12px;padding:12px 16px;min-width:150px}
+  .badge .v{font-size:1.35rem;font-weight:800}
+  .badge .l{font-size:.78rem;opacity:.85;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+
+  /* NAV */
+  nav.subnav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--borde);box-shadow:0 1px 6px rgba(0,0,0,.05)}
+  nav.subnav .wrap{display:flex;gap:4px;overflow-x:auto;padding:0 20px}
+  nav.subnav a{white-space:nowrap;display:inline-block;padding:13px 14px;font-size:.88rem;font-weight:700;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent}
+  nav.subnav a:hover{color:var(--azul);border-color:var(--azul-borde)}
+
+  section{padding:44px 0}
+  section:nth-of-type(even){background:#fff}
+  .section-title{font-size:1.5rem;font-weight:800;color:var(--azul-osc);display:flex;align-items:center;gap:10px}
+  .section-sub{color:var(--muted);margin-top:4px;max-width:760px}
+  .card{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:20px 22px;box-shadow:0 1px 3px rgba(16,24,40,.04)}
+  .grid{display:grid;gap:16px}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .grid-3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+  .grid-5{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  th,td{padding:9px 10px;border-bottom:1px solid var(--borde);text-align:left}
+  th{background:var(--azul-claro);color:var(--azul-osc);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
+  tr:last-child td{font-weight:800;background:#fafcff}
+
+  /* Sector bars */
+  .barrow{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .barrow .lbl{width:170px;flex-shrink:0;font-size:.88rem;font-weight:700}
+  .barrow .track{flex:1;background:#eef2f7;border-radius:8px;height:26px;position:relative;overflow:hidden}
+  .barrow .fill{height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:#fff;font-size:.78rem;font-weight:700;white-space:nowrap}
+  .barrow .pct{width:56px;text-align:right;font-size:.85rem;font-weight:800;color:var(--muted)}
+
+  /* meta bars (reduction) */
+  .metabar .track{background:#eef2f7}
+  .metabar .fill{background:var(--verde)}
+
+  .stat-card{background:var(--azul-claro);border:1px solid var(--azul-borde);border-radius:12px;padding:16px;text-align:center}
+  .stat-card .v{font-size:1.5rem;font-weight:800;color:var(--azul-osc)}
+  .stat-card .l{font-size:.8rem;color:var(--muted);margin-top:2px}
+
+  /* Ejes accordion */
+  details.eje{border:1px solid var(--borde);border-radius:14px;margin-bottom:12px;overflow:hidden;background:#fff}
+  details.eje summary{cursor:pointer;list-style:none;padding:16px 20px;display:flex;align-items:center;gap:14px;font-weight:800;color:var(--azul-osc)}
+  details.eje summary::-webkit-details-marker{display:none}
+  details.eje summary .ic{font-size:1.4rem}
+  details.eje summary .chev{margin-left:auto;transition:transform .2s;color:var(--muted)}
+  details.eje[open] summary .chev{transform:rotate(90deg)}
+  details.eje summary .tag{font-size:.78rem;font-weight:700;background:var(--azul-claro);color:var(--azul);padding:3px 10px;border-radius:20px}
+  .eje-body{padding:0 20px 20px}
+  .medida{border-left:4px solid var(--azul-med);background:#f8fafc;border-radius:0 10px 10px 0;padding:12px 16px;margin-bottom:10px}
+  .medida .mh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-weight:800;font-size:.94rem;color:var(--azul-osc)}
+  .medida .mm{font-size:.82rem;color:var(--verde);font-weight:800}
+  .medida p{margin:6px 0 0;font-size:.88rem;color:var(--muted)}
+
+  .adapt-cat{margin-bottom:22px}
+  .adapt-cat h4{color:var(--azul-osc);font-size:1rem;border-bottom:2px solid var(--azul-claro);padding-bottom:6px}
+  .adapt-cat ul{margin:10px 0 0;padding-left:20px}
+  .adapt-cat li{margin-bottom:8px;font-size:.92rem}
+
+  .gov-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .gov-card{background:var(--verde-claro);border:1px solid var(--verde-borde);border-radius:12px;padding:16px}
+  .gov-card h4{color:var(--verde);margin-bottom:6px;font-size:.95rem}
+  .gov-card p{font-size:.86rem;color:#14532d;margin:0}
+
+  /* Downloads */
+  .dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .dl-card{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;color:inherit;transition:box-shadow .15s,transform .15s}
+  .dl-card:hover{box-shadow:0 6px 18px rgba(0,59,122,.12);transform:translateY(-2px)}
+  .dl-card .ic{font-size:1.8rem;flex-shrink:0}
+  .dl-card h4{font-size:.98rem;color:var(--azul-osc);margin-bottom:3px}
+  .dl-card p{font-size:.82rem;color:var(--muted);margin:0}
+  .dl-card .fmt{display:inline-block;margin-top:8px;font-size:.72rem;font-weight:800;letter-spacing:.03em;color:var(--azul);background:var(--azul-claro);padding:2px 8px;border-radius:6px}
+
+  footer{background:var(--azul-osc);color:rgba(255,255,255,.85);padding:30px 0;font-size:.85rem}
+  footer a{color:#fff}
+  footer .fnote{opacity:.65;font-size:.78rem;margin-top:10px}
+
+  .note{background:var(--ambar-claro);border:1px solid var(--ambar-borde);color:var(--ambar);border-radius:10px;padding:12px 16px;font-size:.86rem;margin-top:14px}
+
+  @media (max-width:640px){
+    header.hero h1{font-size:1.5rem}
+    .barrow .lbl{width:110px;font-size:.78rem}
+    table{font-size:.8rem}
+    th,td{padding:7px 6px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Instituto Municipal de Biodiversidad y Protección Ambiental · IMBIO</div>
+    <h1>Plan de Acción Climática Local<br>Pabellón de Arteaga 2026–2030</h1>
+    <p class="lead">Instrumento rector de mitigación y adaptación al cambio climático del municipio, construido sobre el Inventario de Emisiones de GEI (año base 2022, metodología IPCC Nivel 2/Tier 2 y Protocolo GPC), alineado al PEACCA, al Plan Municipal de Desarrollo 2024-2027 y al Acuerdo de París.</p>
+    <div class="badges">
+      <div class="badge"><div class="v">177.5 km²</div><div class="l">Superficie municipal</div></div>
+      <div class="badge"><div class="v">47,646</div><div class="l">Habitantes (2022)</div></div>
+      <div class="badge"><div class="v">197,479.8 t</div><div class="l">CO₂e — línea base 2022</div></div>
+      <div class="badge"><div class="v">4.14 t</div><div class="l">CO₂e por habitante/año</div></div>
+      <div class="badge"><div class="v">−30%</div><div class="l">Meta de reducción al 2030</div></div>
+    </div>
+  </div>
+</header>
+
+<nav class="subnav">
+  <div class="wrap">
+    <a href="#inventario">Inventario GEI</a>
+    <a href="#metas">Visión y Metas</a>
+    <a href="#ejes">Ejes de Mitigación</a>
+    <a href="#adaptacion">Adaptación</a>
+    <a href="#gobernanza">Gobernanza y MRV</a>
+    <a href="#financiamiento">Financiamiento</a>
+    <a href="#descargas">Descargas</a>
+  </div>
+</nav>
+
+<!-- ═══════════ INVENTARIO ═══════════ -->
+<section id="inventario">
+  <div class="wrap">
+    <div class="section-title">📊 Inventario de Emisiones de GEI — Año Base 2022</div>
+    <p class="section-sub">Elaborado con metodología Nivel 2 (Tier 2) de las Directrices IPCC 2006 para los sectores AFOLU e IPPU, y metodología estándar para Energía Estacionaria, Autotransporte y Residuos, conforme al Protocolo GPC (WRI/C40/ICLEI). GWP aplicados (AR5): CH₄=28, N₂O=265.</p>
+
+    <div class="grid grid-2" style="margin-top:24px;align-items:start">
+      <div class="card">
+        <h3 style="color:var(--azul-osc);font-size:1.05rem">Emisiones por sector</h3>
+        <div style="margin-top:16px">
+          <div class="barrow"><div class="lbl">Energía Estacionaria</div><div class="track"><div class="fill" style="width:39.3%;background:var(--s1)">39.30%</div></div></div>
+          <div class="barrow"><div class="lbl">Autotransporte</div><div class="track"><div class="fill" style="width:36.52%;background:var(--s2)">36.52%</div></div></div>
+          <div class="barrow"><div class="lbl">AFOLU (agropecuario)</div><div class="track"><div class="fill" style="width:21.51%;background:var(--s3)">21.51%</div></div></div>
+          <div class="barrow"><div class="lbl">IPPU (industrial)</div><div class="track"><div class="fill" style="width:8%;min-width:60px;background:var(--s4)">1.85%</div></div></div>
+          <div class="barrow"><div class="lbl">Residuos</div><div class="track"><div class="fill" style="width:6%;min-width:50px;background:var(--s5)">0.82%</div></div></div>
+        </div>
+        <table style="margin-top:18px">
+          <tr><th>Sector</th><th>tCO₂e</th><th>%</th></tr>
+          <tr><td>1. Energía Estacionaria</td><td>77,619.69</td><td>39.30%</td></tr>
+          <tr><td>2. Autotransporte</td><td>72,113.15</td><td>36.52%</td></tr>
+          <tr><td>3. AFOLU (Nivel 2)</td><td>42,482.91</td><td>21.51%</td></tr>
+          <tr><td>4. IPPU (Nivel 2)</td><td>3,645.09</td><td>1.85%</td></tr>
+          <tr><td>5. Residuos</td><td>1,618.96</td><td>0.82%</td></tr>
+          <tr><td>Total municipal 2022</td><td>197,479.80</td><td>100%</td></tr>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3 style="color:var(--azul-osc);font-size:1.05rem">Distribución por tipo de gas</h3>
+        <table style="margin-top:12px">
+          <tr><th>Gas</th><th>tCO₂e</th><th>%</th></tr>
+          <tr><td>CO₂ (dióxido de carbono)</td><td>159,142.54</td><td>80.59%</td></tr>
+          <tr><td>N₂O (óxido nitroso)</td><td>17,684.02</td><td>8.95%</td></tr>
+          <tr><td>CH₄ (metano)</td><td>17,009.40</td><td>8.61%</td></tr>
+          <tr><td>HFC (gases fluorados)</td><td>2,531.50</td><td>1.28%</td></tr>
+          <tr><td>Total</td><td>197,479.80</td><td>100%</td></tr>
+        </table>
+        <h3 style="color:var(--azul-osc);font-size:1.05rem;margin-top:20px">Indicadores clave</h3>
+        <div class="grid grid-3" style="margin-top:10px">
+          <div class="stat-card"><div class="v">1,112.4</div><div class="l">tCO₂e/km² (intensidad territorial)</div></div>
+          <div class="stat-card"><div class="v">±12–18%</div><div class="l">Incertidumbre AFOLU</div></div>
+          <div class="stat-card"><div class="v">±10–15%</div><div class="l">Incertidumbre IPPU</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>Hallazgo destacado:</b> las granjas porcinas con manejo de estiércol en laguna anaerobia son la fuente agropecuaria más intensiva del municipio (6,226.36 tCO₂e/año) — con un potencial de reducción de ~5,500 tCO₂e/año si migran a biodigestores con captura de biogás (Medida M3-A).
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ METAS ═══════════ -->
+<section id="metas">
+  <div class="wrap">
+    <div class="section-title">🎯 Visión Climática y Metas 2030</div>
+    <p class="section-sub"><b>Visión:</b> en 2030, Pabellón de Arteaga es un municipio semiurbano bajo en carbono, resiliente y sustentable, que ha reducido sus emisiones de GEI en al menos 30% respecto a la línea base 2022, protege sus ecosistemas y recursos hídricos, y garantiza el bienestar de sus habitantes con equidad y participación ciudadana.</p>
+
+    <div class="grid grid-3" style="margin:22px 0">
+      <div class="stat-card"><div class="v">197,479.8 → ≤138,236</div><div class="l">tCO₂e/año (línea base → meta 2030)</div></div>
+      <div class="stat-card"><div class="v">59,244</div><div class="l">tCO₂e de reducción requerida</div></div>
+      <div class="stat-card"><div class="v">~2.9</div><div class="l">tCO₂e per cápita meta 2030</div></div>
+    </div>
+
+    <div class="card">
+      <h3 style="color:var(--azul-osc);font-size:1.05rem">Metas cuantitativas de reducción por sector al 2030</h3>
+      <div style="margin-top:16px">
+        <div class="barrow metabar"><div class="lbl">Energía Estacionaria</div><div class="track"><div class="fill" style="width:19%">−19.0% · −14,720 t</div></div></div>
+        <div class="barrow metabar"><div class="lbl">Autotransporte</div><div class="track"><div class="fill" style="width:11%;min-width:130px">−11.0% · −7,900 t</div></div></div>
+        <div class="barrow metabar"><div class="lbl">AFOLU</div><div class="track"><div class="fill" style="width:22.1%">−22.1% · −9,400 t</div></div></div>
+        <div class="barrow metabar"><div class="lbl">IPPU</div><div class="track"><div class="fill" style="width:22%;min-width:120px">−22.0% · −800 t</div></div></div>
+        <div class="barrow metabar"><div class="lbl">Residuos</div><div class="track"><div class="fill" style="width:67.9%">−67.9% · −1,100 t</div></div></div>
+      </div>
+      <table style="margin-top:18px">
+        <tr><th>Sector</th><th>Base 2022</th><th>Reducción</th><th>Meta 2030</th></tr>
+        <tr><td>Energía Estacionaria</td><td>77,619.69</td><td>−14,720</td><td>62,900</td></tr>
+        <tr><td>Autotransporte</td><td>72,113.15</td><td>−7,900</td><td>64,213</td></tr>
+        <tr><td>AFOLU</td><td>42,482.91</td><td>−9,400</td><td>33,083</td></tr>
+        <tr><td>IPPU</td><td>3,645.09</td><td>−800</td><td>2,845</td></tr>
+        <tr><td>Residuos</td><td>1,618.96</td><td>−1,100</td><td>519</td></tr>
+        <tr><td>Total</td><td>197,479.80</td><td>−33,920 (−30% meta)</td><td>≤138,236</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ EJES ═══════════ -->
+<section id="ejes">
+  <div class="wrap">
+    <div class="section-title">🛠️ Ejes de Mitigación</div>
+    <p class="section-sub">17 medidas de mitigación distribuidas en 5 ejes sectoriales, cada uno alineado al Plan Municipal de Desarrollo 2024-2027.</p>
+
+    <details class="eje" open>
+      <summary><span class="ic">⚡</span> Eje 1 — Energía Estacionaria <span class="tag">39.30% del total</span><span class="chev">▶</span></summary>
+      <div class="eje-body">
+        <div class="medida">
+          <div class="mh"><span>E1-A · Programa Municipal de Eficiencia Energética</span><span class="mm">−8,500 tCO₂e/año · 2026-2027</span></div>
+          <p>Auditorías energéticas en el 100% de edificios públicos; sustitución de las 871 luminarias de vapor de sodio restantes por LED; ISO 50001 en los 3 principales centros de consumo industrial; campaña de uso eficiente de Gas LP.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>E1-B · Generación Distribuida Fotovoltaica</span><span class="mm">−6,200 tCO₂e/año · 2026-2028</span></div>
+          <p>Meta de 5 MWp instalados: paneles en edificios municipales con medición neta, parque solar comunitario de 1 MWp, créditos verdes para 300 sistemas residenciales y 50 MIPYMES.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>E1-C · Sustitución de Gas LP por biogás y calentadores solares</span><span class="mm">−2,500 tCO₂e/año · 2027-2030</span></div>
+          <p>Sustitución gradual de equipos de Gas LP residencial por calentadores solares y biogás proveniente de los biodigestores porcinos (Medida M3-A).</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="eje">
+      <summary><span class="ic">🚗</span> Eje 2 — Autotransporte <span class="tag">36.52% del total</span><span class="chev">▶</span></summary>
+      <div class="eje-body">
+        <div class="medida">
+          <div class="mh"><span>T2-A · Movilidad No Motorizada</span><span class="mm">−2,100 tCO₂e/año · 2026-2027</span></div>
+          <p>8 km de ciclovías en la cabecera municipal, rehabilitación de banquetas en 15 puntos críticos, sistema piloto de 20 bicicletas públicas en 4 estaciones.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>T2-B · Flota Municipal, Electromovilidad y Verificación</span><span class="mm">−5,800 tCO₂e/año · 2026-2030</span></div>
+          <p>4 vehículos eléctricos/híbridos para la flota municipal (~30 unidades), mantenimiento y verificación de emisiones, 3 puntos de carga públicos, gestión estatal de verificación vehicular ciudadana (16,200 vehículos).</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>T2-C · Gestión de la Demanda de Transporte</span><span class="mm">−1,500 tCO₂e/año · 2026-2030</span></div>
+          <p>Criterios de desarrollo orientado al transporte (DOT): usos mixtos de suelo, estacionamientos regulados, restricciones de circulación en horario pico en el Centro Histórico.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="eje">
+      <summary><span class="ic">🐄</span> Eje 3 — AFOLU: Ganadería, Agricultura y Suelo <span class="tag">21.51% del total</span><span class="chev">▶</span></summary>
+      <div class="eje-body">
+        <div class="medida">
+          <div class="mh"><span>M3-A · Biodigestores en Granjas Porcinas</span><span class="mm">−5,500 tCO₂e/año · 2026-2028</span></div>
+          <p>Biodigestores de cubierta flotante/geomembrana en el 80% de granjas con laguna anaerobia; captura de CH₄ para energía; producción de biofertilizante para el DR01.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>M3-B · Manejo de Estiércol Bovino y Avícola</span><span class="mm">−400 tCO₂e/año · 2026-2027</span></div>
+          <p>Compostaje aerobio de estiércol bovino, mejor manejo de camas de pollos, talleres técnicos con INIFAP.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>M3-C · Optimización de Fertilizantes Nitrogenados</span><span class="mm">−1,900 tCO₂e/año · 2026-2027</span></div>
+          <p>Análisis de suelo gratuito para 200 agricultores del DR01, inhibidores de nitrificación, fertirrigación de precisión en 30% de la superficie agrícola.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>M3-D · Conservación y Restauración del Suelo (UTCUTS)</span><span class="mm">Cese del cambio de uso · 2026-2030</span></div>
+          <p>Actualización del POEL, Comité de Ordenamiento Ecológico, gestión de PSA para 200 ha con CONAFOR, restauración activa de 100 ha con especies nativas.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="eje">
+      <summary><span class="ic">🗑️</span> Eje 4 — Residuos <span class="tag">0.82% del total</span><span class="chev">▶</span></summary>
+      <div class="eje-body">
+        <div class="medida">
+          <div class="mh"><span>R4-A · Separación en Fuente y Compostaje</span><span class="mm">−490 tCO₂e/año · 2026-2028</span></div>
+          <p>Campaña de separación domiciliaria en el 100% de las rutas, planta de compostaje aerobio (4,000 t/año), rehabilitación de 3 centros de acopio y 2 puntos limpios nuevos.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>R4-B · Gestión Climática del Contrato de Disposición Final</span><span class="mm">hasta −610 tCO₂e/año (condicionado) · 2026-2029</span></div>
+          <p>El relleno sanitario es de operación privada y está fuera del municipio. Se gestionará una cláusula de aprovechamiento de biogás o compensación climática en la renegociación del contrato de servicio.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>R4-C · Saneamiento y Reutilización de Agua Tratada</span><span class="mm">−75 tCO₂e/año · 2026-2028</span></div>
+          <p>Ampliar cobertura de tratamiento secundario por lodos activados, reutilización de agua tratada en áreas verdes municipales, diagnóstico de descargas, evaluación de humedales rurales.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="eje">
+      <summary><span class="ic">🏭</span> Eje 5 — IPPU: Procesos Industriales <span class="tag">1.85% del total</span><span class="chev">▶</span></summary>
+      <div class="eje-body">
+        <div class="medida">
+          <div class="mh"><span>I5-A · Sustitución de HFC por refrigerantes de bajo GWP</span><span class="mm">−800 tCO₂e/año · 2027-2032</span></div>
+          <p>Registro municipal de equipos con HFC, articulado con licencias ambientales; acuerdo con supermercados para sustituir a CO₂/HFO; talleres con CANIFRÍO.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>I5-B · Control de COV e Inspección Industrial</span><span class="mm">−50 tCO₂e/año · 2026-2027</span></div>
+          <p>Auditorías NOM-085-SEMARNAT a los dos establecimientos textiles con emisiones de COV; sustitución de solventes aromáticos; recuperación de percloroetileno.</p>
+        </div>
+        <div class="medida">
+          <div class="mh"><span>I5-C · Gestión del Proceso Avícola</span><span class="mm">−80 tCO₂e/año · 2026-2028</span></div>
+          <p>Recuperación de calor residual en calderas de escaldado; mejora del tratamiento biológico de aguas residuales del rastro avícola.</p>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ═══════════ ADAPTACIÓN ═══════════ -->
+<section id="adaptacion">
+  <div class="wrap">
+    <div class="section-title">🌵 Eje 6 — Adaptación al Cambio Climático y Resiliencia</div>
+    <p class="section-sub">18 acciones de adaptación frente a la condición semiárida del municipio (~452 mm de precipitación anual) en cuatro frentes: hídrico, ecosistémico, seguridad alimentaria e infraestructura/salud.</p>
+
+    <div class="grid grid-2" style="margin-top:20px">
+      <div class="adapt-cat card">
+        <h4>💧 Adaptación Hídrica</h4>
+        <ul>
+          <li>Atlas Municipal de Riesgo Climático con énfasis hídrico (2026).</li>
+          <li>Riego por goteo y fertirrigación en 30% del DR01 (−20% consumo de agua al 2028).</li>
+          <li>20 sistemas de captación de agua pluvial en edificios públicos al 2027.</li>
+          <li>Monitoreo continuo del acuífero Pabellón; supervisión del 100% de los pozos.</li>
+          <li>Reutilización de agua tratada (128 L/s) en 282,084.70 m² de áreas verdes.</li>
+          <li>Rehabilitación de infraestructura hidráulica e instalación de medidores.</li>
+        </ul>
+      </div>
+      <div class="adapt-cat card">
+        <h4>🌳 Adaptación Ecosistémica y Biodiversidad</h4>
+        <ul>
+          <li>Programa de Ordenamiento Ecológico Local (POEL) y Comité de Ordenamiento.</li>
+          <li>Reforestación de 100 ha con especies nativas (mezquite, nopal, pitaya, huizache).</li>
+          <li>Monitoreo de biodiversidad con ciencia ciudadana (iNaturalist): meta 500 especies.</li>
+          <li>Corredores verdes urbanos — arborización de 5 km de vialidades principales.</li>
+          <li>Programa de Educación Ambiental Municipal (1 programa/año).</li>
+        </ul>
+      </div>
+      <div class="adapt-cat card">
+        <h4>🌽 Adaptación en Seguridad Alimentaria</h4>
+        <ul>
+          <li>Variedades de maíz y trigo tolerantes a la sequía con INIFAP en el DR01.</li>
+          <li>Promoción del Seguro Agrícola Catastrófico de SEGALMEX (200 productores).</li>
+          <li>50 huertos familiares urbanos/periurbanos al 2026 con compostaje municipal.</li>
+        </ul>
+      </div>
+      <div class="adapt-cat card">
+        <h4>🏥 Adaptación en Infraestructura y Salud</h4>
+        <ul>
+          <li>Reglamento de Construcción con criterios de eficiencia energética y resistencia climática.</li>
+          <li>Protocolo de atención a grupos vulnerables en calor extremo (con Protección Civil y SSA).</li>
+          <li>Pavimentos permeables en las colonias de mayor riesgo de inundación.</li>
+          <li>Construcción del Centro Municipal de Control y Bienestar Animal.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ GOBERNANZA / MRV ═══════════ -->
+<section id="gobernanza">
+  <div class="wrap">
+    <div class="section-title">🏛️ Gobernanza y Monitoreo, Reporte y Verificación (MRV)</div>
+    <p class="section-sub">El IMBIO conduce el PAC bajo supervisión de la Presidencia Municipal, con reporte bienal a la SSMAA y articulación al sistema MRV estatal del PEACCA.</p>
+
+    <div class="gov-grid" style="margin-top:18px">
+      <div class="gov-card"><h4>Comité Municipal de Cambio Climático (CMACC)</h4><p>Órgano colegiado con Presidencia, IMBIO, Obras Públicas, Servicios Públicos, Desarrollo Rural, CAPA, Tesorería, sociedad civil, academia y sector empresarial. Sesiona bimestralmente.</p></div>
+      <div class="gov-card"><h4>Unidad Técnica MRV del IMBIO</h4><p>Responsable de la recolección anual de datos de actividad y de la elaboración del Informe Bienal de Avance.</p></div>
+      <div class="gov-card"><h4>Presupuesto climático municipal</h4><p>Etiquetado de partidas del POA con clasificación de mitigación, adaptación y gestión.</p></div>
+      <div class="gov-card"><h4>Participación ciudadana</h4><p>Consulta pública de los Informes de Avance; portal de transparencia en pabellon.gob.mx.</p></div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <h3 style="color:var(--azul-osc);font-size:1.05rem">Marco de resultados — indicadores clave</h3>
+      <table style="margin-top:12px">
+        <tr><th>Indicador</th><th>Línea base 2022</th><th>Meta 2028</th><th>Meta 2030</th></tr>
+        <tr><td>Emisiones totales (tCO₂e)</td><td>197,479.80</td><td>≤180,000</td><td>≤138,236</td></tr>
+        <tr><td>Emisiones per cápita (tCO₂e/hab)</td><td>4.14</td><td>≤3.8</td><td>≤2.9</td></tr>
+        <tr><td>MWp fotovoltaicos instalados</td><td>0</td><td>2 MWp</td><td>5 MWp</td></tr>
+        <tr><td>Km de ciclovías</td><td>0 km</td><td>5 km</td><td>8 km</td></tr>
+        <tr><td>Biodigestores en granjas</td><td>0</td><td>2</td><td>≥5</td></tr>
+        <tr><td>% RSU desviado del relleno</td><td>0%</td><td>20%</td><td>30%</td></tr>
+        <tr><td>Hectáreas restauradas/conservadas</td><td>0 ha</td><td>50 ha</td><td>100 ha</td></tr>
+        <tr><td>Cobertura de drenaje</td><td>99.0%</td><td>99.5%</td><td>100%</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FINANCIAMIENTO ═══════════ -->
+<section id="financiamiento">
+  <div class="wrap">
+    <div class="section-title">💰 Estrategia de Financiamiento Climático</div>
+    <p class="section-sub">Combina presupuesto municipal, apoyos estatales/federales, financiamiento verde privado y cooperación internacional.</p>
+    <div class="grid grid-5" style="margin-top:18px">
+      <div class="stat-card"><div class="v">FIDE / NAFIN</div><div class="l">Eficiencia energética y crédito verde</div></div>
+      <div class="stat-card"><div class="v">CFE / GEF</div><div class="l">Generación fotovoltaica</div></div>
+      <div class="stat-card"><div class="v">FIRCO / GIZ</div><div class="l">Biodigestores porcinos</div></div>
+      <div class="stat-card"><div class="v">CONAFOR</div><div class="l">PSA y restauración (UTCUTS)</div></div>
+      <div class="stat-card"><div class="v">GIZ-IKI / NAMA</div><div class="l">Adaptación y ciudades resilientes</div></div>
+    </div>
+    <p style="margin-top:16px;font-size:.9rem;color:var(--muted)">Las medidas M3-A (biodigestores) y R4-B (biogás del relleno sanitario) tienen potencial de generar créditos de carbono verificables bajo metodologías reconocidas (VM0041 de Verra o Gold Standard), con acompañamiento de GIZ y SSMAA.</p>
+  </div>
+</section>
+
+<!-- ═══════════ DESCARGAS ═══════════ -->
+<section id="descargas">
+  <div class="wrap">
+    <div class="section-title">📥 Documentos Descargables</div>
+    <p class="section-sub">Documentos completos y datos técnicos que sustentan el Plan de Acción Climática Local.</p>
+
+    <div class="dl-grid" style="margin-top:20px">
+      <a class="dl-card" href="docs/PAC_Pabellon_Arteaga_2026-2030.pdf" target="_blank">
+        <div class="ic">📄</div>
+        <div>
+          <h4>Plan de Acción Climática Local 2026-2030</h4>
+          <p>Documento completo: diagnóstico, visión, ejes de mitigación, adaptación, MRV y financiamiento.</p>
+          <span class="fmt">PDF</span>
+        </div>
+      </a>
+      <a class="dl-card" href="docs/Inventario_GEI_Pabellon_Arteaga_2022.pdf" target="_blank">
+        <div class="ic">📄</div>
+        <div>
+          <h4>Inventario de Emisiones de GEI — Pabellón de Arteaga 2022</h4>
+          <p>Inventario municipal completo con metodología Nivel 2 (Tier 2), memoria de cálculo por sector y análisis de incertidumbre.</p>
+          <span class="fmt">PDF</span>
+        </div>
+      </a>
+      <a class="dl-card" href="docs/Inventario_GEI_Aguascalientes_2022.pdf" target="_blank">
+        <div class="ic">📄</div>
+        <div>
+          <h4>Inventario de GEI del Estado de Aguascalientes 2022</h4>
+          <p>Inventario estatal de compuestos y gases de efecto invernadero (SSMAA), contexto para el inventario municipal.</p>
+          <span class="fmt">PDF</span>
+        </div>
+      </a>
+      <a class="dl-card" href="docs/Memoria_Calculo_GEI_Tier2_Pabellon2022.xlsx" target="_blank">
+        <div class="ic">📊</div>
+        <div>
+          <h4>Memoria de Cálculo GEI Tier 2</h4>
+          <p>Hoja de cálculo con los datos de actividad, factores de emisión y fórmulas usadas en el inventario 2022.</p>
+          <span class="fmt">XLSX</span>
+        </div>
+      </a>
+      <a class="dl-card" href="docs/Presentacion_PAC_Pabellon.pptx" target="_blank">
+        <div class="ic">📽️</div>
+        <div>
+          <h4>Presentación — Plan de Acción Climática</h4>
+          <p>Resumen ejecutivo del PAC para socialización con Cabildo y ciudadanía.</p>
+          <span class="fmt">PPTX</span>
+        </div>
+      </a>
+      <a class="dl-card" href="docs/Presentacion_Inventario_GEI_2022.pptx" target="_blank">
+        <div class="ic">📽️</div>
+        <div>
+          <h4>Presentación — Inventario GEI 2022</h4>
+          <p>Resumen visual del inventario de emisiones y su metodología.</p>
+          <span class="fmt">PPTX</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><b>Instituto Municipal de Biodiversidad y Protección Ambiental (IMBIO)</b> · H. Ayuntamiento de Pabellón de Arteaga 2024-2027</div>
+    <div class="fnote">Documento elaborado con base en el Inventario Municipal de GEI 2022 (IPCC Nivel 2/Tier 2, Protocolo GPC), el Plan Municipal de Desarrollo 2024-2027 y el PEACCA 2026. Alineado al Acuerdo de París y a la Agenda 2030. Coordinación y elaboración: Biólogo Luis Felipe Lozano Román. Junio de 2026.</div>
+  </div>
+</footer>
+
+</body>
+</html>
