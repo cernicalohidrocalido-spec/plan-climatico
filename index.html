@@ -54,6 +54,8 @@
   .grid-5{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 
   table{width:100%;border-collapse:collapse;font-size:.92rem}
+  /* tablas anchas: scroll propio en celular en vez de ensanchar toda la página */
+  .tabla-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
   th,td{padding:9px 10px;border-bottom:1px solid var(--borde);text-align:left}
   th{background:var(--azul-claro);color:var(--azul-osc);font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.03em}
   tr:last-child td{font-weight:800;background:#fafcff}
@@ -169,7 +171,7 @@
           <div class="barrow"><div class="lbl">Residuos</div><div class="track"><div class="fill" style="width:6.26%;min-width:60px;background:var(--s5)">6.26%</div></div></div>
           <div class="barrow"><div class="lbl">IPPU (industrial)</div><div class="track"><div class="fill" style="width:6%;min-width:60px;background:var(--s4)">1.48%</div></div></div>
         </div>
-        <table style="margin-top:18px">
+        <div class="tabla-scroll" style="margin-top:18px"><table>
           <tr><th>Sector</th><th>tCO₂e</th><th>%</th></tr>
           <tr><td>1. Energía Estacionaria</td><td>77,619.69</td><td>37.73%</td></tr>
           <tr><td>2. Autotransporte</td><td>73,640.24</td><td>35.80%</td></tr>
@@ -177,19 +179,19 @@
           <tr><td>4. Residuos</td><td>12,872.77</td><td>6.26%</td></tr>
           <tr><td>5. IPPU (Nivel 2)</td><td>3,052.30</td><td>1.48%</td></tr>
           <tr><td>Total municipal 2022</td><td>205,720.56</td><td>100%</td></tr>
-        </table>
+        </table></div>
       </div>
 
       <div class="card">
         <h3 style="color:var(--azul-osc);font-size:1.05rem">Distribución por tipo de gas</h3>
-        <table style="margin-top:12px">
+        <div class="tabla-scroll" style="margin-top:12px"><table>
           <tr><th>Gas</th><th>tCO₂e</th><th>%</th></tr>
           <tr><td>CO₂ (dióxido de carbono, incl. UTCUTS)</td><td>164,325.62</td><td>79.88%</td></tr>
           <tr><td>CH₄ (metano)</td><td>28,926.25</td><td>14.06%</td></tr>
           <tr><td>N₂O (óxido nitroso)</td><td>9,937.19</td><td>4.83%</td></tr>
           <tr><td>HFC (gases fluorados)</td><td>2,531.50</td><td>1.23%</td></tr>
           <tr><td>Total</td><td>205,720.56</td><td>100%</td></tr>
-        </table>
+        </table></div>
         <h3 style="color:var(--azul-osc);font-size:1.05rem;margin-top:20px">Indicadores clave</h3>
         <div class="grid grid-3" style="margin-top:10px">
           <div class="stat-card"><div class="v">1,158.8</div><div class="l">tCO₂e/km² (intensidad territorial, Decreto 185)</div></div>
@@ -229,7 +231,7 @@
         <div class="barrow metabar"><div class="lbl">Residuos</div><div class="track"><div class="fill" style="width:4.4%;min-width:120px">−4.4% · −565 t</div></div></div>
         <div class="barrow metabar"><div class="lbl">IPPU</div><div class="track"><div class="fill" style="width:28.8%;min-width:130px">−28.8% · −880 t</div></div></div>
       </div>
-      <table style="margin-top:18px">
+      <div class="tabla-scroll" style="margin-top:18px"><table>
         <tr><th>Sector</th><th>Base 2022</th><th>Reducción</th><th>Meta 2030</th></tr>
         <tr><td>Energía Estacionaria</td><td>77,619.69</td><td>−15,313</td><td>62,307</td></tr>
         <tr><td>Autotransporte</td><td>73,640.24</td><td>−9,400</td><td>64,240</td></tr>
@@ -237,7 +239,7 @@
         <tr><td>Residuos</td><td>12,872.77</td><td>−565</td><td>12,308</td></tr>
         <tr><td>IPPU</td><td>3,052.30</td><td>−880</td><td>2,172</td></tr>
         <tr><td>Total medidas cuantificadas</td><td>205,720.56</td><td>−41,718 (−20.3%)</td><td>164,003</td></tr>
-      </table>
+      </table></div>
       <p style="margin:14px 0 0;font-size:.88rem;color:var(--muted)">Las 14 medidas cuantificadas cubren la <b>meta no condicionada</b> (−20%, ≤164,576 tCO₂e). Para la <b>meta condicionada</b> (−30%, ≤144,004 tCO₂e) faltan 19,998 tCO₂e/año: hasta 3,400 de la captura de biogás en el relleno sanitario (R4-B, Alcance 3) y ~16,598 de medidas con financiamiento externo que se definirán en la revisión bienal de 2028. Las metas sectoriales no incluyen R4-B ni la medida I5-B (COV, calidad del aire).</p>
     </div>
   </div>
@@ -409,7 +411,7 @@
 
     <div class="card" style="margin-top:20px">
       <h3 style="color:var(--azul-osc);font-size:1.05rem">Marco de resultados — indicadores clave</h3>
-      <table style="margin-top:12px">
+      <div class="tabla-scroll" style="margin-top:12px"><table>
         <tr><th>Indicador</th><th>Línea base 2022</th><th>Meta 2028</th><th>Meta 2030</th></tr>
         <tr><td>Emisiones totales (tCO₂e)</td><td>205,720.56</td><td>≤175,000</td><td>≤164,576 (≤144,004 cond.)</td></tr>
         <tr><td>Emisiones per cápita (tCO₂e/hab)</td><td>4.32</td><td>≤3.7</td><td>≤3.5 (≤3.0 cond.)</td></tr>
@@ -422,7 +424,7 @@
         <tr><td><a href="/visor-climatico/">Atlas Municipal de Riesgo Climático</a></td><td>No disponible</td><td>Publicado 2026</td><td>Actualizado 2029</td></tr>
         <tr><td>Inventario GEI actualizado</td><td>2022 (Tier 2)</td><td>2028 (Tier 2 ext.)</td><td>2030 (Tier 2/3)</td></tr>
         <tr><td>Cobertura de drenaje</td><td>99.0%</td><td>99.5%</td><td>100%</td></tr>
-      </table>
+      </table></div>
     </div>
 
     <a class="dl-card" href="/visor-climatico/" style="margin-top:16px;border-color:var(--verde-borde);background:var(--verde-claro)">
